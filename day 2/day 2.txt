@@ -1,0 +1,36 @@
+day 2:
+implicit and explict join
+
+join+on
+inner join==join
+left join==left outer join
+rigth join==right outer join 
+full outer join==full join 
+
+cross join -cartision product
+right side la irukka table ah striaght zh vachukum
+but left side table ah xhuffle pannidum
+cross join ku on condition kudala it won;t give you error
+create table temp as select c.id,d.d_name 		 
+from emp e
+cross join company c;
+
+https://dbfiddle.uk/91VQS9x0
+a. WHERE clause: After joining. Records will be filtered after join has taken place.
+b. ON clause - Before joining. Records (from right table) will be filtered before joining.
+ This may end up as null in the result
+ 
+natural join 
+the sql is responsible to find the join condition by its own
+natural join and inner join are bit similar
+it just join based on the column name not considering the relationship of the columns
+in the different table. 
+if there is no exact same names matchs in column name 
+it will do a cross join between the tables
+if the tables have more than one column sharing the same name then it will join all the columns with same names
+
+
+inner,left,right,self join are widly used joins
+whe we want ot match one record from the table with other record of the same table here we use self join.
+
+give good alias 
