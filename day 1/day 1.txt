@@ -1,0 +1,18 @@
+1Assume you are from cs background your already aware of the 
+Basics of SQL
+Categories of SQL cmd
+Aware of the clauses in SQL
+Day 1:
+Some advance select statement.
+
+[] can't be used in classical sql but it can be used in t-SQL extension.
+string functions
+case
+ordinal postions(bad)
+as clause
+
+
+union (columns count and types must be same)
+union all-has duplicate record too
+group by what ever u use in group must be in select(thumb rule)
+group by+having(where)
