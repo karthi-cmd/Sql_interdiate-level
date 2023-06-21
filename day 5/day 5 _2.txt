@@ -1,0 +1,25 @@
+range(frame)-
+default frame will affect some of the process such as the last-value(),n_percentile(),some aggregate functions.
+
+default frame is  
+"
+ROWS BETWEEN UNBOUNDED PRECEDING AND UNBOUNDED FOLLOWING.
+"
+if we use the order by clause in the window then frame changes to "
+RANGE BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW
+"
+Rank() don't support frames,using rank with frams will violates the use case but Dense rank() support frames
+
+rows vs range
+range consider all the duplicate data till the last row even if the frame specifed is only till the current row as end,looks into the duplicate record and does its work where as row just look till yjr current row not look for any duplicates
+
+over() can be replaced with window
+clause ,this clause comes in handy when there is more number of frames(over()) which are of same type,
+window clause must be specified above the order by clause in sql query
+
+nth value(column,nth rank)
+ntile(no.of bucket) used to create buckets (sub partiont) within one single partition, it distribute equally if it is not equally splitable then it give priority to the first bucket and proceeding ,i.e the first and proceeding record will be filled with more record than the others.
+
+cum_dist()
+used to identify the distribution percentage of  each rec with respect to all the rows in a result set,cum_dist() result will be in the range of 0-1.
+

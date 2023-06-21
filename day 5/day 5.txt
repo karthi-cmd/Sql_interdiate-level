@@ -1,0 +1,40 @@
+day 5:
+window function compute their result based on a set of rows rather than on a single row.
+Window functions are similar to aggregate functions, but there is one important difference. important limitation of the GROUP BY clause namely the “collapse of records”  This limitation is not present on window functions, allowing SQL developers to combine record-level data with window function results in the same query.When we use aggregate functions with the GROUP BY clause, we “lose” the individual rows. 
+if you can't understand this check the example in pdf.
+
+Window functions can be called in the SELECT statement or in the ORDER BY clause and can't be called in where clause
+
+Over()-it helps to describe the window
+over can be used with 3 different operations 
+1,partition 
+2,ordee by
+3,range
+for syntax, examples, use cases refer the pdf
+
+Row_number()-assign s.no in each and every window https://dbfiddle.uk/atCdCbzG
+
+Rank()-rank and fetch what record you need
+ex:to fetch the employee details who got paid highest among his dept
+https://dbfiddle.uk/mLH8wley
+
+DENSE_RANK()-is ssame has rank() but it will not  skip a the rank for every duplicate value in partition condition
+
+lag()-
+lag syntax lag(column name,offset ,default value)
+it just look to the previews offset and returns its value
+
+used to perform a variety of analytical tasks.
+
+Comparing values over time: The LAG() function can be used to compare values over time. For example, you could use the LAG() function to compare sales figures from the previous month to the current month. This could help you to identify trends in your sales data.
+Identifying outliers: The LAG() function can be used to identify outliers in data. An outlier is a data point that is significantly different from the other data points in a set. For example, you could use the LAG() function to identify sales figures that are significantly higher or lower than the average sales figure.
+Smoothing data: The LAG() function can be used to smooth data. This can be useful for identifying trends in data that would otherwise be obscured by noise. For example, you could use the LAG() function to smooth out daily sales figures to identify monthly trends.
+
+LEAD()-
+it just look to the next offset and returns its value it is also used to perform a variety of analytical tasks.
+ex:to analysis the sales figures of each day or month ,we can also make the query to be meaning full by using case
+if u are not aware of case check in last page of the pdf.
+
+
+https://dbfiddle.uk/ua1-Y5Gi
+https://dbfiddle.uk/tGl-q8lj 
