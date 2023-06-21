@@ -1,0 +1,29 @@
+day 3:
+outer query/main (sub query/inner query)
+execute the sub first the outer query is executed
+the sub query is executes once and the results of subquery is used by main query
+
+types of subquery:
+
+query with no relation with outer query
+a,scalar subquery - return one row and column
+b,multiple row subquery - return multiple rows  
+ 1,multiple rows+ multiple columns
+ 2,multiple rows+ one column 
+
+query related to the outer query
+c,correlated subquery -  
+
+d,nested subquery
+
+
+select(https://dbfiddle.uk/pyvRjnLJ),from,where,having these are the clauses can use the subquery
+
+using subquery inside select must be a scalar
+avoid using select query inside a select clause, alternatively use join
+
+insert(https://dbfiddle.uk/nPo7chWw),update(https://dbfiddle.uk/yxqvT9Az),delete(https://dbfiddle.uk/yxqvT9Az) 		
+
+
+exist vs in clause:
+ you should use the EXISTS operator when you need to check if any rows exist in a table that meet a certain condition. You should use the IN operator when you need to check if a column value exists in a list of values.
