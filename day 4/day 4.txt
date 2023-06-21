@@ -1,0 +1,35 @@
+day 4:cte &temp table
+cte(common table expression)or sub query factoring
+ when using with clause it comes before the 
+select statement 
+syntax:
+
+WITH cte (list of columns to be returned) AS
+(SELECT  ..... FROM ... condition )
+
+cte  temporary named result sets that can be referenced within a SELECT, INSERT, UPDATE, or DELETE statement.
+use cases:
+Refactor complex queries: CTEs can be used to break down complex queries into smaller, more manageable pieces. This can make queries easier to read and understand, and it can also improve performance by reducing the amount of data that needs to be processed.
+Perform complex calculations: CTEs can be used to perform complex calculations that would be difficult or impossible to do with a standard SELECT statement. For example, CTEs can be used to calculate running totals, cumulative sums, or averages.
+Create recursive queries(it is a topic for another day): CTEs can be used to create recursive queries, which are queries that can be used to process hierarchical data. For example, CTEs can be used to find all of the employees in a company, as well as their managers and subordinates.
+
+CTEs are stored in memory cte don't store the table in db, while temporary tables can be stored in memory or on disk. Temporary tables that are stored on disk can be used to store large amounts of data, but they can also slow down the performance of queries that access them.
+Cte don't support indexing ,the cte is active till the execution of the query,temp table is available till the end of the session
+you may think what is a temp table ?
+let me answer:
+It is a table that is created in memory or on disk for the duration of a single session. They can be used to store data that is needed for multiple queries, or to perform complex calculations that would be difficult or impossible to do with a standard SELECT statement. Temporary tables can also be indexed, which can improve the performance of queries that access them.
+ two types of temporary tables in SQL:
+
+Local temporary tables: These tables are only visible to the current session. They are dropped automatically when the session ends.
+Global temporary tables: These tables are visible to all sessions. They are dropped when the last session that references them ends. 
+# is used to denote a temp table 
+syntax for local temp table:
+ 
+CREATE TABLE #temp_table (
+  column1 datatype,
+  column2 datatype,
+  ...
+); 
+
+if it has one hashtag(#)- local temp table
+if it has two hashtag(##)- global temp table
