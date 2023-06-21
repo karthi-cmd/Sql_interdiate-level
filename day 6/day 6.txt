@@ -1,0 +1,38 @@
+WITH [RECURSIVE] CTE_name AS
+SELEPT query (Non Recursive query or the Base query)
+UNION [ALL]
+SELGCT query (Recursive query using CTE_name [with a termination condition])
+SELECT * FROM CTE_name;
+recursive query syntax
+
+
+microsoft server,oracle don't need to specify the recursive keyword and it allows only union all function
+used to extract hierarchy of data
+
+view is a db obj,view don't store any data,it is a kinnda of virtual table, view just represent a data that is returned by any sql query view can never store a data 
+view can also be used for privacy
+the view just store the structure of the table used to create it,it won't store all the details of the table
+
+simplify the complex query :
+imagine u have a 100 line of sql query u need to share the result of the query instead of sharing thee whole query u can create a view and share the query to display the view,there by making it simple for shareholders and clients to just see the result.
+
+avoiding rewriting:
+u can use the view where every needed instead of copy pasting the entire query becoz view is a kinda of table that don't takes storage  
+
+security :
+main usage of view is to maintain security,
+imagine the client want to view to everyday sales report at at every EOD,we just wrote the query to complete his requirement but the query has vulnerability of exposing the db to a third person out of the dev team if the db structure is known then the whole db is vulnerable to attacks to avoid this developers use DCL commands to grand the 3rd party user to access only the view not the tables used to get the view
+https://etutorials.org/SQL/microsoft+sql+server+2000/Part+IV+Transact-SQL/Chapter+27.+Creating+and+Managing+Views+in+SQL+Server/Using+Views+as+a+Security+Mechanism/
+
+create or replace view
+rule :cant change name ,cant change datatype,cant change order of columns, cant add new columns in middle of existing vtable but can add at the end
+
+alter view can be used to alter the table properties 
+
+views don't capture changes in the primary table,so any new columns added after view creation willl not be recorded  
+
+uodate view rule:
+1,the view should be created with one table only
+2,query cannot have distinct clause
+3, group by should not be there
+4, should not have window func, with clause
